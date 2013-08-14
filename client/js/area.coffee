@@ -4,10 +4,10 @@ define ->
 
         contains: (entity) ->
             if entity?
-                entity.gridX >= this.x and
-                entity.gridY >= this.x and
-                entity.gridX < this.x + this.width and
-                entity.gridY < this.y + this.height
+                entity.gridX >= @x and
+                entity.gridY >= @x and
+                entity.gridX < @x + @width and
+                entity.gridY < @y + @height
             else
                 false
 

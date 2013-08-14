@@ -3,21 +3,21 @@ class Item extends Entity
     constructor: (id, kind, @type) ->
         super id, kind
 
-        this.itemKind = Types.getKindAsString kind
-        this.wasDropped = false
+        @itemKind = Types.getKindAsString kind
+        @wasDropped = false
 
     hasShadow: -> true
 
     onLoot: (player) ->
-        if this.type == "weapon"
-            player.switchWeapon this.itemKind
-        else if this.type == "armor"
-            player.armorloot_callback this.itemKind
+        if @type == "weapon"
+            player.switchWeapon @itemKind
+        else if @type == "armor"
+            player.armorloot_callback @itemKind
 
     getSpriteName: ->
-        "item-" + this.itemKind
+        "item-" + @itemKind
 
     getLootMessage: ->
-        this.lootMessage
+        @lootMessage
 
 Item
