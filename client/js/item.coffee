@@ -1,4 +1,4 @@
-define ['entity'], -> (Entity)
+define ['entity'], (Entity) ->
     class Item extends Entity
         constructor: (id, kind, @type) ->
             super id, kind
