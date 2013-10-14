@@ -687,6 +687,11 @@ define(['jquery', 'storage'], function($, Storage) {
             }, 5000);
         },
 
+        toggleResizeMessage: function(show) {
+            $('#parchment, #container, .intro #toggle-legal, #toggle-legal, .intro #legal-link, #legal-link').toggle(!show);
+            $('#resize').toggle(show);
+        },
+
         resetMessageTimer: function() {
             clearTimeout(this.messageTimer);
         },
@@ -694,11 +699,16 @@ define(['jquery', 'storage'], function($, Storage) {
         resizeUi: function() {
             if(this.game) {
                 if(this.game.started) {
-                    this.game.resize();
-                    this.initHealthBar();
-                    this.initTargetHud();
-                    this.initExpBar();
-                    this.game.updateBars();
+                    if (this.game.renderer.checkRescale()) {
+                        this.toggleResizeMessage(false);
+                        this.game.resize();
+                        this.initHealthBar();
+                        this.initTargetHud();
+                        this.initExpBar();
+                        this.game.updateBars();
+                    } else {
+                        this.toggleResizeMessage(true);
+                    }
                 } else {
                     this.game.renderer.rescale();
                 }

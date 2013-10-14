@@ -70,6 +70,15 @@ function(Camera, Item, Character, Player, Timer) {
             return 1;
         },
 
+        /**
+         * Returns true if the appropriate size tilesheets / spritesheets have been loaded for the
+         * current browser viewport size.
+         */
+        checkRescale: function() {
+            this.scale = this.getScaleFactor();
+            return (this.game.map.tilesets[this.scale - 1] && this.game.spritesets[this.scale - 1]);
+        },
+
         rescale: function() {
             this.scale = this.getScaleFactor();
 
