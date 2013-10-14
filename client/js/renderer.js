@@ -49,24 +49,25 @@ function(Camera, Item, Character, Player, Timer) {
         },
 
         getScaleFactor: function() {
-            var w = window.innerWidth,
-                h = window.innerHeight,
-                scale;
+            var w = window.innerWidth;
+            var h = window.innerHeight;
 
             this.mobile = false;
 
-            if(w <= 1000) {
-                scale = 2;
-                this.mobile = true;
-            }
-            else if(w <= 1500 || h <= 870) {
-                scale = 2;
-            }
-            else {
-                scale = 3;
+            if(w > 1500) {
+                return (h > 870) ? 3 : 2;
             }
 
-            return scale;
+            if(w <= 1500 && w > 1000) {
+                return 2;
+            }
+
+            if(w <= 1000 && w > 800) {
+                return 1;
+            }
+
+            this.mobile = true;
+            return 1;
         },
 
         rescale: function() {
