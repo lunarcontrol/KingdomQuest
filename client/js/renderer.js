@@ -19,7 +19,7 @@ function(Camera, Item, Character, Player, Timer) {
             this.upscaledRendering = this.context.mozImageSmoothingEnabled !== undefined;
             this.supportsSilhouettes = this.upscaledRendering;
 
-            this.rescale(this.getScaleFactor());
+            this.rescale();
 
             this.lastTime = new Date();
             this.frameCount = 0;
@@ -69,7 +69,7 @@ function(Camera, Item, Character, Player, Timer) {
             return scale;
         },
 
-        rescale: function(factor) {
+        rescale: function() {
             this.scale = this.getScaleFactor();
 
             this.createCamera();

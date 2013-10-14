@@ -2590,10 +2590,9 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
         resize: function() {
             var x = this.camera.x,
                 y = this.camera.y,
-                currentScale = this.renderer.scale,
-                newScale = this.renderer.getScaleFactor();
+                currentScale = this.renderer.scale;
 
-                this.renderer.rescale(newScale);
+                this.renderer.rescale();
                 this.camera = this.renderer.camera;
                 this.camera.setPosition(x, y);
 

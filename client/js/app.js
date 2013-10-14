@@ -700,8 +700,7 @@ define(['jquery', 'storage'], function($, Storage) {
                     this.initExpBar();
                     this.game.updateBars();
                 } else {
-                    var newScale = this.game.renderer.getScaleFactor();
-                    this.game.renderer.rescale(newScale);
+                    this.game.renderer.rescale();
                 }
             }
         }
