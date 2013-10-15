@@ -190,6 +190,12 @@ define(['jquery', 'app', 'entrypoint'], function($, App, EntryPoint) {
             $('#resize-check').bind("webkitTransitionEnd", app.resizeUi.bind(app));
             $('#resize-check').bind("oTransitionEnd", app.resizeUi.bind(app));
 
+            // Ensure that the "Please rotate your device to landscape mode" and the "Please refresh or
+            // resize your browser window to resume playing" messages are never shown simultaneously.
+            $('#portrait-size-check').bind("transitionend", app.checkRescale.bind(app));
+            $('#portrait-size-check').bind("webkitTransitionEnd", app.checkRescale.bind(app));
+            $('#portrait-size-check').bind("oTransitionEnd", app.checkRescale.bind(app));
+
             log.info("App initialized.");
 
             initGame();

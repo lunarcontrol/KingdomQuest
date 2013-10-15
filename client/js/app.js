@@ -687,9 +687,28 @@ define(['jquery', 'storage'], function($, Storage) {
             }, 5000);
         },
 
-        toggleResizeMessage: function(show) {
-            $('#parchment, #container, .intro #toggle-legal, #toggle-legal, .intro #legal-link, #legal-link').toggle(!show);
-            $('#resize').toggle(show);
+        checkRescale: function() {
+            var $gameElements = $('#parchment, #container, .intro #toggle-legal, #toggle-legal, .intro #legal-link, #legal-link');
+            var $resizeMessage = $('#resize');
+
+            if (this.game.renderer.checkRescale()) {
+                $resizeMessage.hide();
+                $gameElements.show();
+                return true;        // Game supports rescaling to the new size
+            }
+            // Otherwise, game cannot continue running in current size, so we need to show a message
+            // asking the user to either refresh the browser, or resize the game back to the previous size.            
+            $gameElements.hide();
+
+            // If the message asking the user to rotate their device to landscape mode is visible, that message should
+            // take precedence - ensure that we do not display both messages simultaneously.
+            if($('#portrait').is(':visible')) {
+                $resizeMessage.hide();
+            } else {
+                $resizeMessage.show();
+            }
+
+            return false;       // Return false to signify rescaling is not supported.
         },
 
         resetMessageTimer: function() {
@@ -699,15 +718,12 @@ define(['jquery', 'storage'], function($, Storage) {
         resizeUi: function() {
             if(this.game) {
                 if(this.game.started) {
-                    if (this.game.renderer.checkRescale()) {
-                        this.toggleResizeMessage(false);
+                    if (this.checkRescale()) {
                         this.game.resize();
                         this.initHealthBar();
                         this.initTargetHud();
                         this.initExpBar();
                         this.game.updateBars();
-                    } else {
-                        this.toggleResizeMessage(true);
                     }
                 } else {
                     this.game.renderer.rescale();
