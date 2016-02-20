@@ -3,32 +3,15 @@ define(['character'], function(Character) {
     var NpcTalk = {
         "guard": [
             "Hello there",
-            "We don't need to see your identification",
-            "You are not the player we're looking for",
-            "Move along, move along..."
+            "I don't have time to talk right now..."
         ],
 
         "king": [
             "Hi, I'm the King",
-            "I run this place",
-            "Like a boss",
-            "I talk to people",
-            "Like a boss",
-            "I wear a crown",
-            "Like a boss",
-            "I do nothing all day",
-            "Like a boss",
-            "Now leave me alone",
-            "Like a boss"
         ],
 
         "villagegirl": [
-            "Hi there, adventurer!",
-            "How do you like this game?",
-            "It's all happening in a single web page! Isn't it crazy?",
-            "It's all made possible thanks to WebSockets.",
-            "I don't know much about it, after all I'm just a program.",
-            'Why don&#x27;t you read this <a target="_blank" href="http://hacks.mozilla.org/2012/03/browserquest/">blog post</a> and learn all about it?'
+            "Hi there, adventurer!"
         ],
 
         "villager": [
@@ -42,9 +25,9 @@ define(['character'], function(Character) {
         ],
 
         "agent": [
-            "Do not try to bend the sword",
-            "That's impossible",
-            "Instead, only try to realize the truth...",
+            "Have you tried to bend that sword?",
+            "You must first connect to the inner sword..",
+            "and realize the truth...",
             "There is no sword."
         ],
 
