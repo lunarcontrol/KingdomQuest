@@ -24,6 +24,12 @@ Based on the game by Mozilla, Little Workshop (Guillaume Lecollinet, Franck Leco
 
  -->
 <html lang="en">
+	
+	<script type="text/javascript">
+	if (window.location.protocol != "http:")
+    window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+	</script>
+	
 	<head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
