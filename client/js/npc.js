@@ -29,7 +29,7 @@ define(['character'], function(Character) {
             "consectetur adipisicing elit, sed do eiusmod tempor"
         ],
 
-        "scientist": [{
+        "scientist": [
 	    "lorem ipsum dolor sit amet",
             "consectetur adipisicing elit, sed do eiusmod tempor"
 		],
