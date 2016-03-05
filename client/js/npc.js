@@ -15,8 +15,10 @@ define(['character'], function(Character) {
         ],
 
         "villager": [
-             "lorem ipsum dolor sit amet",
-            "consectetur adipisicing elit, sed do eiusmod tempor"
+            "Hello and Welcome to KingdomQuest!",
+            "You are in the town of SOMETHING!",
+            "Fell free to explore to your hearts desire..",
+              "Why don't you go visit the king?"
         ],
 
         "agent": [
