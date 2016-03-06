@@ -219,38 +219,10 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                     name: "Underground",
                     desc: "Explore at least one cave"
                 },
-                AT_WORLDS_END: {
-                    id: 7,
-                    name: "At World's End",
-                    desc: "Reach the south shore"
-                },
                 COWARD: {
                     id: 8,
                     name: "Coward",
                     desc: "Successfully escape an enemy"
-                },
-                TOMB_RAIDER: {
-                    id: 9,
-                    name: "Tomb Raider",
-                    desc: "Find the graveyard"
-                },
-                SKULL_COLLECTOR: {
-                    id: 10,
-                    name: "Skull Collector",
-                    desc: "Kill 10 skeletons",
-                    isCompleted: function() {
-                        return self.storage.getSkeletonCount() >= 10;
-                    }
-                },
-                NINJA_LOOT: {
-                    id: 11,
-                    name: "Ninja Loot",
-                    desc: "Get hold of an item you didn't fight for"
-                },
-                NO_MANS_LAND: {
-                    id: 12,
-                    name: "No Man's Land",
-                    desc: "Travel through the desert"
                 },
                 HUNTER: {
                     id: 13,
@@ -276,32 +248,10 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                         return self.storage.getTotalDamageTaken() >= 5000;
                     }
                 },
-                HOT_SPOT: {
-                    id: 16,
-                    name: "Hot Spot",
-                    desc: "Enter the volcanic mountains"
-                },
-                HERO: {
-                    id: 17,
-                    name: "Hero",
-                    desc: "Defeat the final boss"
-                },
                 FOXY: {
                     id: 18,
-                    name: "Foxy",
-                    desc: "Find the Firefox costume",
-                    hidden: true
-                },
-                FOR_SCIENCE: {
-                    id: 19,
-                    name: "For Science",
-                    desc: "Enter into a portal",
-                    hidden: true
-                },
-                RICKROLLD: {
-                    id: 20,
-                    name: "Rickroll'd",
-                    desc: "Take some singing lessons",
+                    name: "Fire",
+                    desc: "Find the Fire Potion",
                     hidden: true
                 }
             };
